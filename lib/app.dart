@@ -6,7 +6,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PostModel postData = PostModel(title:"test", postId: "111111111");
+    PostModel postData = PostModel(title: "test", postId: "111111111");
     // Slack.slack(postData, "reason");
     return Scaffold(
       appBar: AppBar(
@@ -16,7 +16,7 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           children: [
             const Text('Hello World'),
-            FloatingActionButton(onPressed:() => Slack.slack(postData, "reason") )
+            FloatingActionButton(onPressed: () => {}),
           ],
         ),
       ),
