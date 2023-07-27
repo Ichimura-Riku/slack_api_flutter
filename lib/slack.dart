@@ -6,6 +6,7 @@ import "dart:io";
 
 // エラーが出るから一旦コメントアウト
 import "package:flutter/cupertino.dart";
+import "package:fluttertoast/fluttertoast.dart";
 import "package:http/http.dart" as http;
 
 // part "src/slack/client.dart";
@@ -15,7 +16,9 @@ import "package:http/http.dart" as http;
 
 class Slack {
   static Future<void> slack(PostModel postData, String reasonValue) async {
-    const String slackToken = 'xoxb-5519295219076-5631370216407-ozcbUebTd1A09Ju4Qw24r4Os';
+    Fluttertoast.showToast(msg: "slack bot button");
+    const String slackToken =
+        '';
     Uri slackUri = Uri.parse("https://slack.com/api/chat.postMessage");
     Map<String, Object> data = {
       "channel": "T05F98P6F28",
@@ -53,15 +56,12 @@ class Slack {
       },
       body: json.encode(data),
     );
-    debugPrint(response as String?);
+
   }
 }
 
 class PostModel {
-  String title = "";
-  num postId = 0;
-  PostModel(String title, num postId) {
-    title = this.title;
-    postId = this.postId;
-  }
+  final String title;
+  final String postId;
+  PostModel({required this.title, required this.postId});
 }

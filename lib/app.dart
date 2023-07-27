@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
-
+import 'package:slack_api_flutter/slack.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    PostModel postData = PostModel(title:"test", postId: "111111111");
+    // Slack.slack(postData, "reason");
     return Scaffold(
       appBar: AppBar(
         title: const Text("slackBotTest"),
       ),
-      body: const Center(
-        child: Text('Hello World'),
+      body: Center(
+        child: Column(
+          children: [
+            const Text('Hello World'),
+            FloatingActionButton(onPressed:() => Slack.slack(postData, "reason") )
+          ],
+        ),
       ),
     );
   }
