@@ -15,10 +15,10 @@ import "package:http/http.dart" as http;
 
 class Slack {
   static Future<void> slack(PostModel postData, String reasonValue) async {
-    const String slackToken = '<取得したToken>';
+    const String slackToken = 'xoxb-5519295219076-5631370216407-ozcbUebTd1A09Ju4Qw24r4Os';
     Uri slackUri = Uri.parse("https://slack.com/api/chat.postMessage");
     Map<String, Object> data = {
-      "channel": "<送信したいチャンネルID>",
+      "channel": "T05F98P6F28",
       "text": postData.title,
       "attachments": [
         {
